@@ -12,6 +12,9 @@ call vundle#begin()
 " Vundle Plugins
 Plugin 'VundleVim/Vundle.vim' 
 
+" Core
+Plugin 'Shougo/vimproc.vim'
+
 " Utils
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
@@ -34,6 +37,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'godlygeek/tabular'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi' 
 
 " Themes
 Plugin 'dracula/vim'
