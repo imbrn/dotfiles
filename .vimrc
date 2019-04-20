@@ -4,52 +4,52 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-" Vundle
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Vundle Plugins
-Plugin 'VundleVim/Vundle.vim' 
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
 
 " Core
-Plugin 'Shougo/vimproc.vim'
+" Plug 'Shougo/vimproc.vim'
 
 " Utils
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree.git' 
-Plugin 'mattn/emmet-vim'
-Plugin 'editorconfig/editorconfig-vim'
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'wycats/nerdtree'
+Plug 'mattn/emmet-vim'
+" Plug 'editorconfig/editorconfig-vim'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Languages
-Plugin 'ternjs/tern_for_vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'othree/html5.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'tpope/vim-fugitive'
-Plugin 'godlygeek/tabular'
-Plugin 'slashmili/alchemist.vim'
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi' 
+" Plug 'ternjs/tern_for_vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'maxmellon/vim-jsx-pretty'
+" Plugin 'mxw/vim-jsx'
+" Plug 'chemzqm/vim-jsx-improve'
+" Plug 'othree/html5.vim'
+" Plug 'hail2u/vim-css3-syntax'
+" Plug 'cakebaker/scss-syntax.vim'
+" Plug 'plasticboy/vim-markdown'
+" Plug 'tpope/vim-fugitive'
+" Plug 'godlygeek/tabular'
+" Plug 'slashmili/alchemist.vim'
+" Plug 'elixir-editors/vim-elixir'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'Quramy/tsuquyomi' 
+" Plug 'dart-lang/dart-vim-plugin'
 
 " Themes
-Plugin 'dracula/vim'
-Plugin 'rakr/vim-one'
-Plugin 'KeitaNakamura/neodark.vim'
-Plugin 'whatyouhide/vim-gotham'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'cocopon/iceberg.vim'
-Plugin 'arcticicestudio/nord-vim'
+" Plug 'dracula/vim'
+" Plug 'rakr/vim-one'
+" Plug 'KeitaNakamura/neodark.vim'
+Plug 'whatyouhide/vim-gotham'
+" Plug 'ayu-theme/ayu-vim'
+" Plug 'cocopon/iceberg.vim'
+" Plug 'arcticicestudio/nord-vim'
 
-cal vundle#end()
+call plug#end()
 
 " Turn on syntax highlighting
 syntax on
@@ -121,8 +121,12 @@ set showmatch
 map <leader><space> :let @/=''<cr> " clear search
 
 " Backuping files
-set nobackup
-set nowritebackup
+" set nobackup
+" set nowritebackup
+
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
 
 " Remap help key.
 inoremap <F1> <ESC>:set invfullscreen<CR>a
@@ -143,18 +147,57 @@ inoremap <C-e> <Esc><C-e>
 vnoremap <C-e> <Esc><C-e>
 nnoremap <leader>e :NERDTree<CR>
 
-" Ctrlp
+
+" ------------------------- Sytanstic -------------------------
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_eslint_exe = 'npm run lint:js --'
+
+
+" --------------------------- Ctrlp ---------------------------
 let g:ctrlp_custom_ignore = 'node_modules\|build\|DS_Store|git'
+let g:ctrlp_show_hidden = 1
+
+
+" ------------------------- coc.nvim --------------------------
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+" use <c-space>for trigger completion
+inoremap <silent><expr> <Nul> coc#refresh()
+
+" use <Tab> and <S-Tab> for navigate completion list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" use <cr> to confirm complete
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Markdown preview
-let vim_markdown_preview_hotkey='<C-m>'
+" let vim_markdown_preview_hotkey='<C-m>'
 
 " YouCompleteMe
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " Jsx
-let g:jsx_ext_required=0
+" let g:jsx_ext_required=0
 
 ":Ex<CR> Textmate holdouts
 
@@ -167,9 +210,6 @@ set listchars=tab:▸\ ,eol:¬
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
-
-" Vim .swap files directories
-set directory^=$HOME/.vim/tmp//
 
 " Saving files
 nmap <C-s> :w<CR>
@@ -192,5 +232,5 @@ endif
 
 " Color scheme
 set background=dark
-colorscheme iceberg
+colorscheme gotham
 
