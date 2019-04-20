@@ -28,6 +28,7 @@ call plug#end()
 "
 
 set number
+set relativenumber
 set wrap
 set encoding=utf-8
 set mouse=a
@@ -92,6 +93,14 @@ set backspace=indent,eol,start
 "" Allows per-project configuration files.
 set exrc
 set secure
+
+
+"
+" ALE
+"
+
+nmap <Leader>an :ALENextWrap<CR>
+nmap <Leader>ap :ALEPreviousWrap<CR>
 
 
 "
