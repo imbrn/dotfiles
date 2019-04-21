@@ -99,8 +99,8 @@ set secure
 " ALE
 "
 
-nmap <Leader>an :ALENextWrap<CR>
-nmap <Leader>ap :ALEPreviousWrap<CR>
+nmap <leader>an :ALENextWrap<CR>
+nmap <leader>ap :ALEPreviousWrap<CR>
 
 
 "
@@ -114,33 +114,18 @@ map <C-e> :NERDTreeToggle<CR>
 " Ctrlp
 "
 
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-let g:ctrlp_custom_ignore = 'node_modules\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|\.git'
 let g:ctrlp_show_hidden = 1
-
-
-"
-" Syntastic
-"
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 
 "
 " Prettier
 "
 
-nmap <silent> <C-S-p> :Prettier<CR>
-imap <silent> <C-S-p> <ESC><C-S-p>
-nmap <silent> <Leader>p <C-S-p>
+nmap <silent> <leader>p :Prettier<CR>
 
 
 "
