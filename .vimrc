@@ -17,6 +17,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 
@@ -144,4 +145,3 @@ set background=dark
 "" Schema
 let ayucolor='mirage'
 colorscheme ayu
-
