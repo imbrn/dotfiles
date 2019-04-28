@@ -25,7 +25,7 @@ call plug#end()
 
 
 "
-" Basics
+" Basic configurations
 "
 
 set number
@@ -42,16 +42,19 @@ set visualbell
 
 
 "
-" Key bindings
+" Basic keys
 "
 
 let mapleader = ','
 
-nmap j gj
-nmap k gk
+nnoremap j gj
+nnoremap k gk
 
-nmap <silent> <C-S-i> gg=G
-nmap <silent> <Leader>i <C-S-i>
+nnoremap <silent> <C-S-i> gg=G
+nnoremap <silent> <leader>i <C-S-i>
+
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
 
 
 "
@@ -60,6 +63,13 @@ nmap <silent> <Leader>i <C-S-i>
 
 syntax enable
 filetype plugin indent on
+
+
+"
+" Settings
+"
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <silent> <leader>sv :source $MYVIMRC<cr>
 
 
 "
@@ -100,15 +110,15 @@ set secure
 " ALE
 "
 
-nmap <leader>an :ALENextWrap<CR>
-nmap <leader>ap :ALEPreviousWrap<CR>
+nnoremap <leader>an :ALENextWrap<CR>
+nnoremap <leader>ap :ALEPreviousWrap<CR>
 
 
 "
 " NERDTree
 "
 
-map <C-e> :NERDTreeToggle<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
 
 
 "
@@ -126,7 +136,7 @@ let g:ctrlp_show_hidden = 1
 " Prettier
 "
 
-nmap <silent> <leader>p :Prettier<CR>
+nnoremap <silent> <leader>p :Prettier<CR>
 
 
 "
