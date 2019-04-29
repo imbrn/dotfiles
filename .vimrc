@@ -17,11 +17,21 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 
 call plug#end()
+
+
+"
+" Syntax
+"
+
+syntax enable
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
 
 
 "
@@ -55,14 +65,6 @@ nnoremap <silent> <leader>i <C-S-i>
 
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
-
-
-"
-" Syntax
-"
-
-syntax enable
-filetype plugin indent on
 
 
 "
@@ -137,6 +139,12 @@ let g:ctrlp_show_hidden = 1
 "
 
 nnoremap <silent> <leader>p :Prettier<CR>
+
+"
+" Deoplete
+"
+
+let g:deoplete#enable_at_startup = 1
 
 
 "
