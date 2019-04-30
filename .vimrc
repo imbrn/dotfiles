@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 "" Plugins go here!
 Plug 'ayu-theme/ayu-vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
@@ -107,6 +108,9 @@ set backspace=indent,eol,start
 set exrc
 set secure
 
+"" autocomplete
+set completeopt=longest,menuone
+
 
 "
 " ALE
@@ -141,10 +145,10 @@ let g:ctrlp_show_hidden = 1
 nnoremap <silent> <leader>p :Prettier<CR>
 
 "
-" Deoplete
+" Supertab
 "
 
-let g:deoplete#enable_at_startup = 1
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 
 "
