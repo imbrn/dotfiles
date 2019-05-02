@@ -66,6 +66,8 @@ nnoremap <silent> <leader>i <C-S-i>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
 
+nunmap <c-i>
+
 
 "
 " Settings
@@ -286,5 +288,5 @@ endif
 set background=dark
 
 "" Schema
-let ayucolor='mirage'
+let ayucolor='dark'
 colorscheme ayu
