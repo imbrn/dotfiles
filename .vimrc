@@ -15,12 +15,17 @@ call plug#begin('~/.vim/plugged')
 "" Plugins go here!
 Plug 'ayu-theme/ayu-vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -40,7 +45,7 @@ set omnifunc=syntaxcomplete#Complete
 
 set number
 set relativenumber
-set wrap
+set nowrap
 set encoding=utf-8
 set mouse=a
 set wildmenu
@@ -112,6 +117,11 @@ set secure
 "" autocomplete
 set completeopt=longest,menuone
 
+"" Backup
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
 
 "
 " ALE
@@ -124,6 +134,9 @@ nnoremap <leader>ap :ALEPreviousWrap<CR>
 "
 " NERDTree
 "
+
+let g:NERDTreeWinSize=40
+let NERDTreeCascadeSingleChildDir=0
 
 nnoremap <C-e> :NERDTreeToggle<CR>
 
@@ -275,6 +288,13 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
 "
+" VIM Javascript (pangloss)
+"
+
+let g:javascript_plugin_flow = 1
+
+
+"
 " Appearance
 "
 
@@ -289,4 +309,4 @@ set background=dark
 
 "" Schema
 let ayucolor='dark'
-colorscheme ayu
+colorscheme gruvbox
