@@ -13,18 +13,18 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 "" Plugins go here!
-Plug 'ayu-theme/ayu-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
 
 call plug#end()
@@ -121,14 +121,6 @@ set completeopt=longest,menuone
 set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
-
-
-"
-" ALE
-"
-
-nnoremap <leader>an :ALENextWrap<CR>
-nnoremap <leader>ap :ALEPreviousWrap<CR>
 
 
 "
@@ -305,8 +297,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-set background=dark
-
 "" Schema
-let ayucolor='dark'
+set background=dark
 colorscheme gruvbox
+
