@@ -13,7 +13,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 "" Plugins go here!
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
@@ -26,6 +26,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -299,5 +300,5 @@ endif
 
 "" Schema
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
 
