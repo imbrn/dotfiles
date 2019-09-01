@@ -26,6 +26,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
+Plug 'jaredgorski/SpaceCamp'
 Plug 'joshdick/onedark.vim'
 
 call plug#end()
@@ -300,5 +301,5 @@ endif
 
 "" Schema
 set background=dark
-colorscheme onedark
+colorscheme gruvbox
 
