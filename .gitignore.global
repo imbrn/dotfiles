@@ -1,0 +1,10 @@
+.vscode
+codealike.json
+jsconfig.json
+coc-settings.json
+.tern-project
+.vimrc
+.netrwhist
+.elixir_ls/
+*.swp
+*.swo
