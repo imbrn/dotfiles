@@ -1,0 +1,45 @@
+call plug#begin('~\AppData\Local\nvim\plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'flazz/vim-colorschemes'
+call plug#end()
+
+let mapleader = ','
+
+set number
+set relativenumber
+
+" Identation
+set tabstop=4
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+let g:netrw_liststyle= 1
+let g:netrw_winsize=25
+
+" vimrc
+nnoremap <Leader>mv :edit $MYVIMRC<CR><Esc>
+nnoremap <Leader>sv :source $MYVIMRC<CR><Esc>
+
+nnoremap <Leader>e :Explore<CR>
+nnoremap <Leader>f :GFiles<CR>
+nnoremap <Leader>F :Files<CR>
+nnoremap <Leader>s :Ag<Space>
+
+nnoremap <Enter> :nohlsearch<CR>
+
+"autocmd BufEnter * silent! lcd %:p:h
+
+"" Enable true color
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+set background=dark
+colorscheme aquamarine
