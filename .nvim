@@ -1,8 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'joshdick/onedark.vim'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 let mapleader = ','
@@ -11,7 +13,7 @@ set number
 set relativenumber
 
 " Identation
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set shiftwidth=2
 set noexpandtab
@@ -23,17 +25,14 @@ let g:netrw_winsize=25
 nnoremap <Leader>mv :edit $MYVIMRC<CR><Esc>
 nnoremap <Leader>sv :source $MYVIMRC<CR><Esc>
 
-nnoremap <Leader>e :GFiles<CR>
-nnoremap <Leader>E :Files<CR>
-nnoremap <Leader>x :Vexplore<CR>
-nnoremap <C-s> :Ag<Space>
+nnoremap <Leader>f :GFiles<CR>
+nnoremap <Leader>F :Files<CR>
+nnoremap <Leader>e :Vexplore<CR>
+nnoremap <Leader>s :Ag<CR>
 
 nnoremap <Enter> :nohlsearch<CR>
 
 autocmd BufEnter * silent! lcd %:p:h
-
-set background=dark
-colorscheme onedark
 
 "" Enable true color
 if exists('+termguicolors')
@@ -41,3 +40,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+set background=dark
+colorscheme aquamarine
