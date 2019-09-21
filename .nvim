@@ -18,16 +18,13 @@ set softtabstop=4
 set shiftwidth=2
 set noexpandtab
 
-let g:netrw_liststyle= 1
-let g:netrw_winsize=25
-
 " vimrc
 nnoremap <Leader>mv :edit $MYVIMRC<CR><Esc>
 nnoremap <Leader>sv :source $MYVIMRC<CR><Esc>
 
 nnoremap <Leader>f :GFiles<CR>
 nnoremap <Leader>F :Files<CR>
-nnoremap <Leader>e :Vexplore<CR>
+nnoremap <Leader>e :Explore<CR>
 nnoremap <Leader>s :Ag<CR>
 
 nnoremap <Enter> :nohlsearch<CR>
