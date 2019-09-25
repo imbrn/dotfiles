@@ -11,6 +11,7 @@ let mapleader = ','
 
 set number
 set relativenumber
+set nowrap
 
 " Identation
 set tabstop=4
@@ -39,4 +40,4 @@ if exists('+termguicolors')
 endif
 
 set background=dark
-colorscheme aquamarine
+colorscheme SlateDark
