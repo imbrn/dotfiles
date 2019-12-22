@@ -3,8 +3,12 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'pangloss/vim-javascript'
+Plug 'dense-analysis/ale'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 let mapleader = ','
@@ -23,14 +27,15 @@ set noexpandtab
 nnoremap <Leader>mv :edit $MYVIMRC<CR><Esc>
 nnoremap <Leader>sv :source $MYVIMRC<CR><Esc>
 
-nnoremap <Leader>f :GFiles<CR>
-nnoremap <Leader>F :Files<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>e :Explore<CR>
 nnoremap <Leader>s :Ag<CR>
+nnoremap <Leader>t :tag <c-r><c-w><cr>
 
 nnoremap <Enter> :nohlsearch<CR>
 
-autocmd BufEnter * silent! lcd %:p:h
+" autocmd BufEnter * silent! lcd %:p:h
 
 "" Enable true color
 if exists('+termguicolors')
@@ -39,5 +44,5 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-set background=dark
-colorscheme SlateDark
+set background=light
+colorscheme coldgreen
