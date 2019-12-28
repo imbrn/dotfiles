@@ -9,33 +9,47 @@ Plug 'flazz/vim-colorschemes'
 Plug 'pangloss/vim-javascript'
 Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 let mapleader = ','
+let loaded_matchparen = 1
 
 set number
 set relativenumber
 set nowrap
+set nobackup
+set nowritebackup
+
+" Folding
+set foldmethod=indent
+set foldlevel=20
 
 " Identation
-set tabstop=4
-set softtabstop=4
+set tabstop=2
+set softtabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 
 " vimrc
 nnoremap <Leader>mv :edit $MYVIMRC<CR><Esc>
 nnoremap <Leader>sv :source $MYVIMRC<CR><Esc>
 
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden --ignore .git'
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>e :Explore<CR>
 nnoremap <Leader>s :Ag<CR>
 nnoremap <Leader>t :tag <c-r><c-w><cr>
+nnoremap <Leader>an :ALENextWrap<cr>
 
 nnoremap <Enter> :nohlsearch<CR>
 
-" autocmd BufEnter * silent! lcd %:p:h
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+set completeopt-=preview
 
 "" Enable true color
 if exists('+termguicolors')
@@ -44,5 +58,5 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-set background=light
-colorscheme coldgreen
+let ayucolor="mirage"
+colorscheme ayu
