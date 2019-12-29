@@ -1,17 +1,16 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug '~/.fzf'
+Plug 'ayu-theme/ayu-vim'
+Plug 'dense-analysis/ale'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'rust-lang/rust.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'rust-lang/rust.vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'pangloss/vim-javascript'
-Plug 'dense-analysis/ale'
-Plug 'mattn/emmet-vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 let mapleader = ','
