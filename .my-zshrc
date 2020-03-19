@@ -1,0 +1,3 @@
+MYZSHRC=`dirname $0`
+
+source "${MYZSHRC}/.git-aliases"

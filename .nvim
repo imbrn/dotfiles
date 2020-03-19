@@ -1,39 +1,54 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'joshdick/onedark.vim'
 Plug '~/.fzf'
+Plug 'ayu-theme/ayu-vim'
+Plug 'dense-analysis/ale'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 let mapleader = ','
+let loaded_matchparen = 1
 
 set number
 set relativenumber
+set nowrap
+set nobackup
+set nowritebackup
+
+" Folding
+set foldmethod=indent
+set foldlevel=20
 
 " Identation
-set tabstop=8
-set softtabstop=4
+set tabstop=2
+set softtabstop=2
 set shiftwidth=2
-set noexpandtab
-
-let g:netrw_liststyle= 1
-let g:netrw_winsize=25
+set expandtab
 
 " vimrc
 nnoremap <Leader>mv :edit $MYVIMRC<CR><Esc>
 nnoremap <Leader>sv :source $MYVIMRC<CR><Esc>
 
-nnoremap <Leader>e :GFiles<CR>
-nnoremap <Leader>E :Files<CR>
-nnoremap <Leader>x :Vexplore<CR>
-nnoremap <C-s> :Ag<Space>
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden --ignore .git'
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>e :Explore<CR>
+nnoremap <Leader>s :Ag<CR>
+nnoremap <Leader>t :tag <c-r><c-w><cr>
+nnoremap <Leader>an :ALENextWrap<cr>
 
 nnoremap <Enter> :nohlsearch<CR>
 
-autocmd BufEnter * silent! lcd %:p:h
-
-set background=dark
-colorscheme onedark
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+set completeopt-=preview
 
 "" Enable true color
 if exists('+termguicolors')
@@ -41,3 +56,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+let ayucolor="mirage"
+colorscheme ayu
