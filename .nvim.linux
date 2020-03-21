@@ -1,17 +1,16 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug '~/.fzf'
-Plug 'ayu-theme/ayu-vim'
 Plug 'dense-analysis/ale'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'rust-lang/rust.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
 call plug#end()
+
+set exrc
+set secure
 
 let mapleader = ','
 let loaded_matchparen = 1
@@ -22,24 +21,27 @@ set nowrap
 set nobackup
 set nowritebackup
 
-" Folding
-set foldmethod=indent
-set foldlevel=20
-
 " Identation
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+set foldmethod=syntax
+set foldlevelstart=20
+
+let g:netrw_liststyle= 1
+let g:netrw_winsize=25
+
 " vimrc
 nnoremap <Leader>mv :edit $MYVIMRC<CR><Esc>
 nnoremap <Leader>sv :source $MYVIMRC<CR><Esc>
 
 let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden --ignore .git'
-nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>e :Explore<CR>
-nnoremap <Leader>s :Ag<CR>
+nnoremap <Leader>F :GFiles<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>s :Ag<Space>
 nnoremap <Leader>t :tag <c-r><c-w><cr>
 nnoremap <Leader>an :ALENextWrap<cr>
 
@@ -57,5 +59,4 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme dracula
