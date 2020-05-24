@@ -1,6 +1,7 @@
 alias gs="git status"
-alias gl="git log"
+alias gl="git log --oneline"
 alias ga="git add"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gca="git commit --amend --no-edit"
+alias gch="git checkout"

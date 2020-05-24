@@ -1,12 +1,14 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'dense-analysis/ale'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'wadackel/vim-dogrun'
 call plug#end()
 
 set exrc
@@ -59,4 +61,4 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-colorscheme dracula
+colorscheme dogrun
