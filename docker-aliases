@@ -1,5 +1,6 @@
 alias dc="docker-compose"
-alias dcu="dc up"
-alias dcs="dc stop"
+alias dcu="dc up -d"
+alias dcp="dc ps"
 alias dcd="dc down"
+alias dcs="dc stop"
 alias dcl="dc logs"
