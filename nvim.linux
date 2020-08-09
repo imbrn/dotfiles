@@ -2,6 +2,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'haishanh/night-owl.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -62,6 +63,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-colorscheme palenight
-let g:lightline = { 'colorscheme': 'palenight' }
+colorscheme night-owl
+let g:lightline = { 'colorscheme': 'nightowl' }
 let g:palenight_terminal_italics=1
