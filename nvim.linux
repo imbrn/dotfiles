@@ -6,6 +6,7 @@ Plug 'haishanh/night-owl.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -48,6 +49,7 @@ nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>s :Ag<Space>
 nnoremap <Leader>t :tag <c-r><c-w><cr>
 nnoremap <Leader>an :ALENextWrap<cr>
+nnoremap <Leader>aN :ALEPreviousWrap<cr>
 
 nnoremap <Enter> :nohlsearch<CR>
 
