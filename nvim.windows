@@ -53,7 +53,7 @@ nnoremap <Enter> :nohlsearch<CR>
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-let g:python3_host_prog = "C:/Users/imbrn/AppData/Local/Programs/Python/Python38/python.exe"
+let g:python3_host_prog = "C:/Users/imbrn/AppData/Local/Programs/Python/Python39/python.exe"
 set completeopt-=preview
 
 "" Enable true color
@@ -66,3 +66,5 @@ endif
 colorscheme palenight
 let g:lightline = { 'colorscheme': 'palenight' }
 let g:palenight_terminal_italics=1
+
+call GuiFont("VT323 NF:h12")
